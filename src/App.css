@@ -27,7 +27,7 @@
   width: 18%;
     overflow: hidden;
     display: inline-block;
-    height: 429px;
+    height: 329px;
     margin: 5px;
     position: relative;
     background: #dad8d836;
@@ -41,20 +41,11 @@
 
 .img_card img {
   max-width: inherit;
-  height: 352px;
-}
-.text-card h6 {
-  position: absolute;
-  top: 268px;
-  height: 94px;
-  background: black;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
+  height: 270px;
 }
 
 .img_card img:hover {
-  opacity: 1;
+  opacity: .82;
 }
 
 button.btn.btn-primary.text-capitalize {
@@ -62,12 +53,13 @@ button.btn.btn-primary.text-capitalize {
 }
 .text-card h6 {
   position: absolute;
-  top: 268px;
-  height: 94px;
-  background: black;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
+    top: 1px;
+    max-height: 94px;
+    background: rgba(37, 28, 1, 0.82);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 100%;
 }
 
 .img_card img:hover {
