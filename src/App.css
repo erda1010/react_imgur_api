@@ -1,0 +1,143 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background: rgb(84,3,47);
+  background: linear-gradient(90deg, rgba(84,3,47,1) 0%, rgba(29,5,105,1) 50%, rgba(116,32,4,1) 100%);
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.img_card {
+  width: 18%;
+    overflow: hidden;
+    display: inline-block;
+    height: 429px;
+    margin: 5px;
+    position: relative;
+    background: #dad8d836;
+    box-shadow: 0px 0px 3px 0px rgb(31, 1, 18);
+}
+
+.container {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.img_card img {
+  max-width: inherit;
+  height: 352px;
+}
+.text-card h6 {
+  position: absolute;
+  top: 268px;
+  height: 94px;
+  background: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.img_card img:hover {
+  opacity: 1;
+}
+
+button.btn.btn-primary.text-capitalize {
+  background: #ffc107;
+}
+.text-card h6 {
+  position: absolute;
+  top: 268px;
+  height: 94px;
+  background: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.img_card img:hover {
+  opacity: 1;
+}
+
+button.btn.btn-primary.text-capitalize {
+  background:#ffc107;
+  width: 80%;
+  margin-top: 14px;
+  border: none;
+  color: #000;
+}
+
+button.btn.btn-primary.text-capitalize:hover {
+  background:#dea806;
+}
+
+button.button-search.bg-primary {
+  width: 92px;
+  background-color: #ffc107!important;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-size: 20px;
+
+}
+.col-md-12.text-center {
+    padding: 10%;
+}
+
+
+form.form-name {
+    width: 61%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.col-md-12.text-center h1 {
+    font-size: 30px;
+}
+
+span.strong-text {
+    margin: 0 8px;
+    padding: 4px;
+    color: #ffc107;
+}
+.error-msg {
+  background: red;
+}
+.col-12.col-md-12.back-btn {
+  margin: 3%;
+}
+
+.col-12.col-md-12.decription_parent {
+  margin-top: 20px;
+    background: rgba(0, 0, 0, 0.57);
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.details.description {
+  text-align: center;
+  background: rgba(243, 234, 235, 0.09);
+  text-transform: uppercase;
+}
+.col-12.col-md-12.img_gallery_detail img {
+  max-width: 800px;
+}
+span.text-inside {
+  color: #ffc107;
+}
