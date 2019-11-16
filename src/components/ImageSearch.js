@@ -11,7 +11,7 @@ export default class ImageSearch extends Component {
                             <h1>Search one of categories:
                                 <span className="strong-text">hot</span>
                                 <span className="strong-text">user</span>
-                                <span className="strong-text">topic</span>
+                                <span className="strong-text">top</span>
                             </h1>
                             <form className="form-name" onSubmit={handleSubmit}>
                                 <label htmlFor="search">
