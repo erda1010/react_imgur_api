@@ -121,6 +121,8 @@ span.strong-text {
     text-align: left;
     margin-bottom: 50px;
     font-size: 18px;
+    max-width: 800px !important;
+    margin: 0 auto;
 }
 .details.description {
   text-align: center;
@@ -128,7 +130,7 @@ span.strong-text {
   text-transform: uppercase;
 }
 .col-12.col-md-12.img_gallery_detail img {
-  max-width: 800px;
+  width: 800px;
 }
 span.text-inside {
   color: #ffc107;
