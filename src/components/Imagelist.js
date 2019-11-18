@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Image from './Image';
 import ImageSearch from './ImageSearch';
-import ImageDetails from './ImageDetails';
 
 export default class Imagelist extends Component {
     render() {
@@ -13,12 +12,24 @@ export default class Imagelist extends Component {
             handleSubmit,
             handleChange,
             error,
+            handleSort,
+            handleSortTop,
+            handleSortTime,
+            handleSortRising,
             search
         } = this.props;
 
         return (
             <React.Fragment>
-                <ImageSearch value={value} handleChange={handleChange} handleSubmit={handleSubmit} />
+                <ImageSearch 
+                value={value} 
+                handleChange={handleChange} 
+                handleSubmit={handleSubmit} 
+                handleSort={handleSort}
+                handleSortTop={handleSortTop}
+                handleSortTime={handleSortTime}
+                handleSortRising={handleSortRising}
+                 />
                 <div className="container">
                     <div className="row">
                         <div className="col-10 col-md-6 text-center text-uppercase mb-3">
@@ -36,7 +47,7 @@ export default class Imagelist extends Component {
                             />
                             );
                         })} */}
-                        {error.length==0 ? <h1 className="danger">{error}</h1> : <div className="error-msg">Wrong search keyword</div>}
+                        {error.length===0 ? <h1 className="danger"></h1> : <div className="error-msg">Wrong search keyword</div>}
                         {data.map(dat => {
                             return (
                                 <Image 
