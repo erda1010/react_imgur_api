@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import Imagelist from "./components/Imagelist";
 import ImageDetails from "./components/ImageDetails";
+import ImageSearch from './components/ImageSearch';
 
 
 class App extends Component {
@@ -13,14 +14,14 @@ class App extends Component {
     id: "LrJJXMz",
     pageIndex: 1,
     search: 'hot',
+    search_new:'hot',
     error: '',
-    search_new:'hot'
+    sort:'/viral'
   };
 
   async getData() {
-
     try {
-      const datas = await fetch(this.state.url + this.state.search, {
+      const datas = await fetch(this.state.url + this.state.search +this.state.sort , {
         headers: {
           'Authorization': 'Client-ID ' + this.state.apiKey
         }
@@ -36,7 +37,6 @@ class App extends Component {
           return { data: jsonDatas.data }
         })
       }
-
     } catch (error) {
       console.log(error);
     }
@@ -63,21 +63,19 @@ class App extends Component {
   handleChange = (e) => {
     this.setState({
       search: e.target.value,
-      search_new: e.target.value
+      search_new: e.target.value,
     },
       () => {
         console.log(this.state.search_new)
       }
     );
-    
-
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { base_url, search,error } = this.state;
+    const { base_url, search,error,sort } = this.state;
     this.setState(() => {
-      return { url: `${base_url}${search}`, search: "",error:'',}
+      return { url: `${base_url}${search}${sort}`, search: '',error:''}
     }, () => {
       if(search === 'top' || search === 'hot' || search === 'user' ){
         this.getData();
@@ -90,7 +88,51 @@ class App extends Component {
   
     })
   };
-
+  handleSort = (e) => {
+    e.preventDefault();
+    this.state.sort = '/viral';
+    const { base_url, search_new,sort } = this.state;
+    this.setState(() => {
+      return { url: `${base_url}${search_new}${sort}`}
+    }, () =>{
+      this.getData();
+      console.log('handlesort',this.state.url)
+      console.log('handlesort',this.getData())
+    })
+  };
+  handleSortTop = (e) => {
+    e.preventDefault();
+    this.state.sort = '/top';
+    const { base_url, search_new,sort } = this.state;
+    this.setState(() => {
+      return { url: `${base_url}${search_new}${sort}`}
+    }, () =>{
+      this.getData();
+      console.log('handlesort',this.state.url)
+    })
+  };
+  handleSortTime = (e) => {
+    e.preventDefault();
+    this.state.sort = '/time';
+    const { base_url, search_new,sort } = this.state;
+    this.setState(() => {
+      return { url: `${base_url}${search_new}${sort}`}
+    }, () =>{
+      this.getData();
+      console.log('handlesort',this.state.url)
+    })
+  };
+  handleSortRising = (e) => {
+    e.preventDefault();
+    this.state.sort = '/rising';
+    const { base_url, search_new,sort } = this.state;
+    this.setState(() => {
+      return { url: `${base_url}${search_new}${sort}`}
+    }, () =>{
+      this.getData();
+      console.log('handlesort',this.state.url)
+    })
+  };
   displayPage = (index) => {
     switch (index) {
       default:
@@ -100,12 +142,17 @@ class App extends Component {
           value={this.state.search}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          handleSort={this.handleSort}
+          handleSortTop={this.handleSortTop}
+          handleSortTime={this.handleSortTime}
+          handleSortRising={this.handleSortRising}
           error={this.state.error}
         />);
       case 0:
         return (<ImageDetails
           id={this.state.id}
           search={this.state.search_new}
+          sort={this.state.sort}
           handleIndex={this.handleIndex}
         />);
     }
