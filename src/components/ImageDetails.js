@@ -5,7 +5,7 @@ export default class ImageDetails extends Component {
     super(props);
     this.state = {
       data: [],
-      url: `https://api.imgur.com/3/gallery/${this.props.search}`,
+      url: `https://api.imgur.com/3/gallery/${this.props.search}${this.props.sort}`,
       apiKey: '2a8c88d6036776b'
     };
   }
@@ -26,32 +26,8 @@ export default class ImageDetails extends Component {
     }
   }
 
-  // state = {
-  //   data: []
-  // }
-
-  // async componentWillMount() {
-  //   console.log(this.props.id)
-  //   const id = this.props.id;
-  //   const url = "https://api.imgur.com/3/gallery/hot";
-  //   const apiKey = '2a8c88d6036776b';
-  //   try {
-  //     const datas = await fetch(url, {
-  //       headers: {
-  //         'Authorization': 'Client-ID ' + this.state.apiKey
-  //       }
-  //     });
-  //     const jsonDatas = await datas.json();
-  //     this.setState((state,props)=>{
-  //       return{data: jsonDatas.data.find(item => item.id === this.props.id)}
-  //     },()=>{});
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
   render() {
-    console.log("url", this.state.search)
+    console.log("state", this.state.url)
     const {
       title,
       score,
@@ -82,7 +58,7 @@ export default class ImageDetails extends Component {
             <div className="col-10 col-md-12 img-big">
               {images.map(el => {
                 return <div className="col-12 col-md-12 img_gallery_detail">
-                  <img src={el.link} />
+                  <img src={el.link} alt="imgurphoto" />
                   <div className="col-12 col-md-12 decription_parent">
                     <div className="details description">Image description</div>
                     <div className="details"><span className="text-inside">Title:</span>{el.title}</div>
