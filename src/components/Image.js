@@ -4,13 +4,6 @@ export default class Image extends Component {
 
     render() {
         const {
-            title,
-            description,
-            ups,
-            downs,
-            score,
-            id,
-            link,
             images = [],
         } = this.props.dat;
 
@@ -21,8 +14,8 @@ export default class Image extends Component {
                     {images.map(el => {
                         if (el.link.match(/\.(jpg|png|gif)/g)) {
                             return (
-                                <div className="img_card">
-                                    <img src={el.link} />
+                                <div className="img_card" onClick={handleDetals}>
+                                    <img src={el.link} alt="imgurphoto" />
                                     <div className="text-card">
                                         <h6>{el.description}</h6>
                                     </div>
